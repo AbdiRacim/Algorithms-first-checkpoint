@@ -1,0 +1,48 @@
+ALGORITHM calculate the same numbers solution2
+VAR
+    arr1, arr2: ARRAY_OF INTEGER[10]
+    sum1, sum2: INTEGER := 0
+    a, b, i : INTEGER
+BEGIN
+
+
+    //Probleme 1 solu 1
+
+    arr1 := [3, 1, 7, 9];
+    arr2 := [2, 4, 1, 9, 3];
+
+    FOR a FROM 1 TO arr1.length STEP 1  DO
+        sum1 := sum1 + arr1[a];
+        FOR b FROM 1 TO arr2.length STEP 1  DO
+            IF (arr1[a] = arr2[b]) THEN
+                twins[a] := arr1[a]
+                sum1 := sum1 - twins[a];
+            END_IF
+        END_FOR
+    END_FOR
+
+    FOR n FROM 1 TO arr2.length STEP 1  DO
+        sum2 := sum2 + arr2[b];
+        FOR a FROM 1 TO arr1.length STEP 1  DO
+            IF (arr1[a] = arr2[b]) THEN
+                sum2 := sum2 - twins[a]; 
+            END_IF
+        END_FOR
+    END_FOR
+
+    TotalnotTwins := sum1 + sum2;
+
+    FOR  i FROM 1 TO  twins.length STEP 1 DO
+        IF (twins[i] = parseInt[""] ) THEN
+            TotalTwins := TotalTwins
+        ELSE TotalTwins := TotalTwins + twins[i]*2;
+        END_IF
+    
+
+    Write("the total of the separate elements is: ", TotalnotTwins); 
+
+    Write("the total of the overlapping elements is:", TotalTwins );
+
+    Write("the numbers that are present in both sets are", twins);
+
+END

@@ -1,0 +1,36 @@
+ALGORITHM The_String_Reader (checkpoint1)
+VAR
+    sentence: STRING[256] := "Charisma is the perfume of the soul, and by the way it's my favorite perfume."
+    vowels: STRING[6] := "aeiouy"
+    charsNbr, lettersNbr, wordsNbr, vowelsNbr, i , j: INTEGER := 0
+BEGIN
+
+    charsNbr := sentence.length; 
+
+    FOR i FROM 1 TO sentence.length STEP 1 DO
+
+        IF ( (sentence[i] <> " ") AND (sentence[i] <> ",") AND (sentence[i] <> ".") ) THEN 
+            lettersNbr := lettersNbr + 1; 
+        ELSE_IF ( (sentence[i] = " ") OR (sentence[i] !== ",") OR (sentence[i] = ".") ) THEN 
+            wordsNbr := wordsNbr + 1; 
+        END_IF
+
+        FOR j FROM 1 TO vowels.length STEP 1 DO 
+            IF (sentence[i] = vowels[j]) THEN 
+                vowelsNbr := vowelsNbr + 1; 
+            END_IF
+        END_FOR
+
+    END_FOR    
+
+    Write("Your Sentence is :", sentence);
+
+    Write("Your sentence contains :", charsNbr, " character !");
+
+    Write("Your sentence contains :", lettersNbr, " lettres !");
+
+    Write("Your sentence contains :", wordsNbr, " words !");
+
+    Write("Your sentence contains :", vowelsNbr, " vowels !");
+
+END
