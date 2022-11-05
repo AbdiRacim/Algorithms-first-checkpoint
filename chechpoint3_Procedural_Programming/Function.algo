@@ -1,0 +1,40 @@
+PROCEDURE read_coordinates (VAR X,Y  : ARRAY_OF FLOAT)
+VAR
+BEGIN
+        Read(X);
+        Read(Y);
+END
+
+
+FUNCTION dot_Product(VAR V1, V2 : ARRAY_OF FLOAT)
+VAR
+    i : INTEGER
+    ps : FLOAT := 0
+BEGIN
+
+    FOR i FROM 0 TO V1.length-1 STEP 1  DO
+        ps := V1[i] * V2[i] + V1[i+1] * V2[i+1] ; //using only the coordinates to calculate the dot product and the rule is v1(x1,y1) . v2(x2,y2) = x1x2 + y1y2
+    END_FOR
+    RETURN ps;
+END
+
+
+ALGORITHM Verify orthogonal
+VAR
+    V1,V2 : ARRAY_OF FLOAT[10]; 
+    i, j, : INTEGER   
+    ps : FLOAT
+BEGIN
+
+    V1=read_coordinates (X,Y);
+    V2=read_coordinates (X,Y);
+
+    ps := dot_Product(V1, V2);
+
+    IF (ps = 0) THEN
+        Write(V1, " and ", V2, " are orthogonal because their point products are equal to zero");
+        ELSE
+        Write(V1, " and ", V2, " are not orthogonal because their point products are not equal to zero");
+    END_IF
+
+END
