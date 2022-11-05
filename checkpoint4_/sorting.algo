@@ -1,0 +1,57 @@
+FUNCTION sort(VAR arr: ARRAY_OF INTEGER) 
+VAR
+    //number of elements in the array
+    arr := [5, 8, 11, 6, 1, 9, 3];
+    len := arr.length;
+    tmp,i,j := INTEGER;
+    FOR i FROM 0 TO i < len STEP 1 DO
+      //store current value 
+        tmp := arr[i]
+        j := i - 1
+        
+        WHILE (j >= 0 AND arr[j] > tmp) DO
+        // move the number
+            arr[j+1] := arr[j]
+            j--
+        END_WHILE
+        
+      //Inserts the temporary value at position
+      //correct in the sorted part.
+        arr[j+1] := tmp
+    END_FOR
+    RETURN arr
+
+    sort(arr);
+    Write("here is our final array for the first solution:",arr);
+
+
+
+//TODO Another Solution for this Checkpoint !
+
+
+// Function to sort an array using insertion sort
+FUNCTION insertion_Sort(VAR arr1, VAR n :ARRAY_OF INTEGER) 
+VAR
+    i, key, j, : INTEGER 
+BEGIN
+    FOR i FROM 0 TO i < n STEP 1  DO
+        key := arr1[i]; 
+        j := i - 1; 
+
+        /* Move elements of arr1[0..i-1], that are 
+        greater than key, to one position ahead 
+        of their current position */
+        WHILE (j >= 0 AND arr1[j] > key) DO
+            arr1[j + 1] := arr1[j]; 
+            j:= j - 1; 
+        END_WHILE
+        arr1[j + 1] := key; 
+    END_FOR
+END
+
+// Driver code
+    let arr1 = [12, 11, 13, 5, 6 ]; 
+    let n = arr1.length; 
+
+    insertion_Sort(arr1); 
+    Write("here is our final array for the second solution:",arr1)
