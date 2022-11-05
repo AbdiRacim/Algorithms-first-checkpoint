@@ -1,4 +1,4 @@
-ALGORITHM calculate the same numbers solution2
+ALGORITHM calculate the same numbers solution1 prob2
 VAR
     arr1, arr2: ARRAY_OF INTEGER[10]
     sum1, sum2: INTEGER := 0
@@ -39,10 +39,10 @@ BEGIN
         END_IF
     
 
-    Write("the total of the separate elements is: ", TotalnotTwins); 
+    Write("the total of the separate elements is: ", TotalnotTwins); //13
 
-    Write("the total of the overlapping elements is:", TotalTwins );
+    Write("the total of the overlapping elements is:", TotalTwins );//26
 
-    Write("the numbers that are present in both sets are", twins);
+    Write("the numbers that are present in both sets are", twins);// 3,1,9
 
 END

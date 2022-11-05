@@ -1,0 +1,69 @@
+ALGORITHM calculate the same numbers with hashtable solution2 pob1
+VAR
+    hash : HASH_TABLE<INTEGER, INTEGER>;
+    arr,twins: ARRAY_OF INTEGER[10]
+    count, i, sum: INTEGER
+BEGIN
+    arr=[12, 13, 6, 10,13, 10, 16, 15]
+
+    count := 0;
+
+FOR i FROM 1 TO arr.length STEP 1 DO
+        IF (hash.lookup(arr[i]) = TRUE) THEN 
+            count := arr[i]; /
+            hash.insert(arr[i], count + 1); 
+        ELSE 
+        hash.insert(arr[i], 1); 
+        END_IF
+    END_FOR
+
+    // FOR i FROM 1 TO arr1.length STEP 1 DO
+    //     IF (hash.lookup(arr1[i]) = TRUE) THEN 
+    //         count1 := arr1[i]; 
+    //         hash.insert(arr1[i], count1 + 1); 
+    //     ELSE 
+    //     END_IF
+    // END_FOR
+
+    // FOR i FROM 1 TO arr2.length STEP 1 DO
+    //     IF (hash.lookup(arr2[i]) = TRUE) THEN 
+    //         count2 := arr2[i]; 
+    //         hash.insert(arr2[i], count2 + 1); 
+    //     ELSE 
+    //     END_IF
+    // END_FOR
+
+    //  FOR a FROM 1 TO arr1.length STEP 1  DO
+    //     sum1 := sum1 + arr1[a];
+    //     FOR b FROM 1 TO arr2.length STEP 1  DO
+    //         IF (arr1[a] = arr2[b]) THEN
+    //             twins[a] := arr1[a]
+    //             sum1 := sum1 - twins[a];
+    //         END_IF
+    //     END_FOR
+    // END_FOR
+
+    // FOR b FROM 1 TO arr2.length STEP 1  DO
+    //     sum2 := sum2 + arr2[b];
+    //     FOR a FROM 1 TO arr1.length STEP 1  DO
+    //         IF (arr1[a] = arr2[b])
+    //             sum2 := sum2 - twins[a]; 
+    //         END_IF
+    //     END_FOR
+    // END_FOR
+
+    sum := 0;
+    FOR i FROM 1 TO arr.length STEP 1  DO
+        IF (hash.get(arr[i]) = 1) THEN
+            sum := sum + arr[i]
+            twins[i] := arr1[i]; 
+        END_IF
+    END_FOR
+
+
+    Write("the total of the overlapping elements is:", sum );  //46
+
+    Write("the numbers that are present in both sets are", twins);  //13, 10
+
+
+END

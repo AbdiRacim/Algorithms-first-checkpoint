@@ -38,8 +38,8 @@ for (let b = 0; b < arr2.length; b++) {
 
     console.log("the total of the separate elements is: ", TotalnotTwins); 
 
-    console.log("the total of the overlapping elements is:", TotalTwins );
+    console.log("the total of the overlapping elements is:", TotalTwins ); 
 
-    console.log("the numbers that are present in both sets are", twins);
+    console.log("the numbers that are present in both sets are", twins); 
 
 

@@ -1,0 +1,34 @@
+ALGORITHM calculate the same numbers with hashtable solution2 pob1
+VAR
+    hash : HASH_TABLE<INTEGER, INTEGER>;
+    arr,twins: ARRAY_OF INTEGER[10]
+    count, i, sum: INTEGER
+BEGIN
+    arr=[3, 1, 7, 9, 2, 4, 1, 9, 3 ]
+
+    count := 0;
+
+FOR i FROM 1 TO arr.length STEP 1 DO
+        IF (hash.lookup(arr[i]) = TRUE) THEN 
+            count := arr[i]; /
+            hash.insert(arr[i], count + 1); 
+        ELSE 
+        hash.insert(arr[i], 1); 
+        END_IF
+    END_FOR
+
+    sum := 0;
+    FOR i FROM 1 TO arr.length STEP 1  DO
+        IF (hash.get(arr[i]) = 1) THEN
+            sum := sum + arr[i]
+            twins[i] := arr[i]; 
+        END_IF
+    END_FOR
+
+
+    Write("the total of the overlapping elements is:", sum );//26
+
+    Write("the numbers that are present in both sets are", twins);// 3,1,9
+
+
+END
